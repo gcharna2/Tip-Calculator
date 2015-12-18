@@ -1,0 +1,67 @@
+//
+//  SettingsViewController.swift
+//  tipping
+//
+//  Created by Griffin Charnas on 12/14/15.
+//  Copyright © 2015 Griffin Charnas. All rights reserved.
+//
+
+import UIKit
+
+class SettingsViewController: UIViewController {
+    
+    @IBOutlet weak var firstControl: UITextField!
+    @IBOutlet weak var secondControl: UITextField!
+    @IBOutlet weak var thirdControl: UITextField!
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        firstControl.text = "0"
+        secondControl.text = "0"
+        thirdControl.text = "0"
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //firstControl.text = "0"
+        //secondControl.text = "0"
+        //thirdControl.text = "0"
+    
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func firstTipRate(sender: AnyObject) {
+        defaults.setObject(firstControl.text, forKey: "default_first_tip_percentage")
+        defaults.synchronize()
+    }
+    
+    @IBAction func secondTipRate(sender: AnyObject) {
+        defaults.setObject(secondControl.text, forKey: "default_second_tip_percentage")
+        defaults.synchronize()
+    }
+    
+    @IBAction func thirdTipRate(sender: AnyObject) {
+        defaults.setObject(thirdControl.text, forKey: "default_third_tip_percentage")
+        defaults.synchronize()
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
