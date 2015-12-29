@@ -18,16 +18,17 @@ class SettingsViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        firstControl.text = "0"
-        secondControl.text = "0"
-        thirdControl.text = "0"
+        firstControl.text = ""
+        secondControl.text = ""
+        thirdControl.text = ""
+        [firstControl .becomeFirstResponder()]
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //firstControl.text = "0"
-        //secondControl.text = "0"
-        //thirdControl.text = "0"
+        firstControl.text = ""
+        secondControl.text = ""
+        thirdControl.text = ""
     
 
         // Do any additional setup after loading the view.
