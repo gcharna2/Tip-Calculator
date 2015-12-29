@@ -41,6 +41,7 @@ class ViewController: UIViewController {
         tipControl.setTitle(firstTipValue!+"%", forSegmentAtIndex:0)
         tipControl.setTitle(secondTipValue!+"%", forSegmentAtIndex:1)
         tipControl.setTitle(thirdTipValue!+"%", forSegmentAtIndex:2)
+        [billField .becomeFirstResponder()]
     }
     
     
